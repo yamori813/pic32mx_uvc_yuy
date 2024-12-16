@@ -1,38 +1,37 @@
-/********************************************************************
- FileName:     	usb_descriptors.c
- Dependencies:	See INCLUDES section
- Processor:	PIC18 or PIC24 USB Microcontrollers
- Hardware:	The code is natively intended to be used on the following
- 		hardware platforms: PICDEM™ FS USB Demo Board,
- 		PIC18F87J50 FS USB Plug-In Module, or
- 		Explorer 16 + PIC24 USB PIM.  The firmware may be
- 		modified for use on other USB platforms by editing the
- 		HardwareProfile.h file.
- Complier:  	Pinguino gcc
- Company:	Microchip Technology, Inc.
+/********************************************************************^M
+ FileName:      usb_descriptors.c^M
+ Dependencies:  See INCLUDES section^M
+ Processor:     PIC18 or PIC24 USB Microcontrollers^M
+ Hardware:      The code is natively intended to be used on the following^M
+~
+                PIC18F87J50 FS USB Plug-In Module, or^M
+                Explorer 16 + PIC24 USB PIM.  The firmware may be^M
+                modified for use on other USB platforms by editing the^M
+                HardwareProfile.h file.^M
+ Complier:      Pinguino gcc^M
+ Company:       Microchip Technology, Inc.^M
+^M
+ Software License Agreement:^M
+^M
+ The software supplied herewith by Microchip Technology Incorporated^M
+~
+~
+ exclusively on Microchip PIC Microcontroller products. The^M
+ software is owned by the Company and/or its supplier, and is^M
+ protected under applicable copyright laws. All rights are reserved.^M
+ Any use in violation of the foregoing restrictions may subject the^M
+ user to criminal sanctions under applicable laws, as well as to^M
+ civil liability for the breach of the terms and conditions of this^M
+ license.^M
+^M
+~
+ WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED^M
+ TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A^M
+ PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. THE COMPANY SHALL NOT,^M
+ IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL OR^M
 
- Software License Agreement:
-
- The software supplied herewith by Microchip Technology Incorporated
- (the “Company”) for its PIC® Microcontroller is intended and
- supplied to you, the Company’s customer, for use solely and
- exclusively on Microchip PIC Microcontroller products. The
- software is owned by the Company and/or its supplier, and is
- protected under applicable copyright laws. All rights are reserved.
- Any use in violation of the foregoing restrictions may subject the
- user to criminal sanctions under applicable laws, as well as to
- civil liability for the breach of the terms and conditions of this
- license.
-
- THIS SOFTWARE IS PROVIDED IN AN “AS IS” CONDITION. NO WARRANTIES,
- WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED
- TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
- PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. THE COMPANY SHALL NOT,
- IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL OR
- CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
-
-*********************************************************************
--usb_descriptors.c-
+*********************************************************************^M
+-usb_descriptors.c-^M
 -------------------------------------------------------------------
 Filling in the descriptor values in the usb_descriptors.c file:
 -------------------------------------------------------------------
