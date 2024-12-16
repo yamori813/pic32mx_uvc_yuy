@@ -49,3 +49,17 @@ typedef enum
 #define UVC_STREAM_EOF	(1 << 1)
 #define UVC_STREAM_FID	(1 << 0)
 
+#define WBVAL(x) (x & 0xFF),((x >> 8) & 0xFF)
+#define DBVAL(x) (x & 0xFF),((x >> 8) & 0xFF),((x >> 16) & 0xFF),((x >> 24) & 0xFF)
+
+
+#define WIDTH                                         (unsigned int)160
+#define HEIGHT                                        (unsigned int)120
+#define CAM_FPS                                       5
+//#define VIDEO_PACKET_SIZE                             (unsigned int)(768+2)//128+130
+#define MIN_BIT_RATE                                  (unsigned long)(WIDTH*HEIGHT*16*CAM_FPS)//16 bit
+#define MAX_BIT_RATE                                  (unsigned long)(WIDTH*HEIGHT*16*CAM_FPS)
+#define MAX_FRAME_SIZE                                (unsigned long)(WIDTH*HEIGHT*2)//yuy2
+//#define MAX_FRAME_SIZE                                (unsigned long)(WIDTH*HEIGHT*3/2)//nv12
+#define INTERVAL                                      (unsigned long)(10000000/CAM_FPS)
+//#define PACKETS_IN_FRAME                              (unsigned int)(MAX_FRAME_SIZE/(VIDEO_PACKET_SIZE-2))
