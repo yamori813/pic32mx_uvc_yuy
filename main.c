@@ -255,16 +255,18 @@ void EmulateCamera(void)
 	int i;
 
 	if(!USBHandleBusy(USBTxHandle)) {
-                
+		int eof;
 		static uint8_t packet[255];
 		static uint8_t frame_toggle=0;
 		static uint16_t picture_index=0;
 		volatile uint16_t tosend;
 
-		if (picture_index * (MAXPAYLOAD - 2) > 160 * 2 * 120) {
+		if (picture_index * (MAXPAYLOAD - 2) >= 160 * 2 * 120) {
 			tosend = 160 * 2 * 120 - (picture_index - 1) * (MAXPAYLOAD - 2);
+			eof = 1;
 		} else {
 			tosend = MAXPAYLOAD - 2;
+			eof = 0;
 		}
 
 		packet[0] = 0x2; //header length 
@@ -274,13 +276,14 @@ void EmulateCamera(void)
                 	packet[3 + i] = 0x80;
 		}
                 ++picture_index;
-                if (tosend != (MAXPAYLOAD - 2))
+                if (eof)
                 {
 			packet[1] |= UVC_STREAM_EOF;
 
 			picture_index = 0;
 			frame_toggle ^= 1;
 		}
+		packet[1] |= UVC_STREAM_EOH;
 
 		// USBTxOnePacket only send 255 byte below ???
 		USBTxHandle = USBTxOnePacket(UVC_EP_OUT, (void *)packet, tosend + 2);      
