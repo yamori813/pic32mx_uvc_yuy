@@ -186,7 +186,7 @@ ROM USB_DEVICE_DESCRIPTOR device_dsc=
 
 /* Configuration 1 Descriptor */
 ROM BYTE configDescriptor1[] ={
-     /* Configuration Descriptor */
+        /* Configuration Descriptor */
         0x09,                           /* Descriptor Size */
         0x02,        			/* Configuration Descriptor Type */
         0xA7,0x00,                      /* Length of this descriptor and all sub descriptors */
@@ -253,7 +253,6 @@ ROM BYTE configDescriptor1[] ={
         
         /* Video Streaming (VS) Interface Descriptor */
         
-        
         /* Standard VS Interface Descriptor  = interface 1 */
         // alternate setting 0 = Zero Bandwidth
         
@@ -267,7 +266,7 @@ ROM BYTE configDescriptor1[] ={
         0x00,                           /* Interface protocol code : Undefined */
         0x00,                           /* Interface descriptor string index */  
 
-       /* Class-specific Video Streaming Input Header Descriptor */
+        /* Class-specific Video Streaming Input Header Descriptor */
         0x0E,                           /* Descriptor size */
         0x24,                           /* Class-specific VS I/f Type */
         0x01,                           /* Descriptotor Subtype : Input Header */
@@ -281,9 +280,8 @@ ROM BYTE configDescriptor1[] ={
         0x00,                           /* Hardware to initiate still image capture NOT supported */
         0x01,                           /* Size of controls field : 1 byte */
         0x00,                           /* D2 : Compression quality supported */
-
    
-       /* Class specific Uncompressed VS format descriptor */
+        /* Class specific Uncompressed VS format descriptor */
         0x1B,                           /* Descriptor size */
         0x24,                           /* Class-specific VS I/f Type */
         0x04,                           /* Subtype : uncompressed format I/F */
@@ -299,10 +297,8 @@ ROM BYTE configDescriptor1[] ={
         0x00,                           /* Y dimension of the pictuer aspect ratio: Non-interlaced in progressive scan*/
         0x00,                           /* Interlace Flags: Progressive scanning, no interlace */
         0x00,                           /* duplication of the video stream restriction: 0 - no restriction */
-       
 
-
-       /* Class specific Uncompressed VS Frame descriptor */
+        /* Class specific Uncompressed VS Frame descriptor */
         0x1E,                           /* Descriptor size */
         0x24,                           /* Descriptor type*/
         0x05,                           /* Subtype: uncompressed frame I/F */
@@ -317,16 +313,15 @@ ROM BYTE configDescriptor1[] ={
         0x01,                           /* Frame interval(Frame Rate) types: Only one frame interval supported */
         DBVAL(INTERVAL),                /* Shortest Frame Interval */                
        
-          /* Color Matching Descriptor */
-
-        0x06,          /* bLength */
+        /* Color Matching Descriptor */
+        0x06,                           /* bLength */
         0x24,                           /* bDescriptorType : CS_INTERFACE */
         0x0D,                           /* bDescriptorSubType : VS_COLORFORMAT */
         0x01,                           /* bColorPrimarie : 1: BT.709, sRGB (default) */
         0x01,                           /* bTransferCharacteristics : 1: BT.709 (default) */
         0x04,                           /* bMatrixCoefficients : 1: BT. 709. */
               
-       /* Standard Video Streaming Interface Descriptor (Alternate Setting 1) */
+        /* Standard Video Streaming Interface Descriptor (Alternate Setting 1) */
         0x09,                           /* Descriptor size */
         0x04,                           /* Interface Descriptor type */
         0x01,                           /* Interface number */
