@@ -239,7 +239,7 @@ ROM BYTE configDescriptor1[] ={
         0x00,0x00,                      /* No optical zoom supported */
         0x00,0x00,                      /* No optical zoom supported */
         0x02,                           /* Size of controls field for this terminal : 2 bytes */
-        0x00,0x00,                 /* No controls supported */
+        0x00,0x00,                      /* No controls supported */
         
         /* Output Terminal Descriptor */
         0x09,                           /* Descriptor size */
