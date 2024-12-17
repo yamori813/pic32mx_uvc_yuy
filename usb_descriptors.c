@@ -183,25 +183,6 @@ ROM USB_DEVICE_DESCRIPTOR device_dsc=
     0x01                            // Number of possible configurations
 };
 
-#ifdef SAMPLE24
-typedef struct
-{
-    unsigned char left[3];
-    unsigned char right[3];
-}
-AUDIO_PLAY_SAMPLE;
-#else
-typedef struct
-{
-    INT16 left;
-    INT16 right;
-}
-AUDIO_PLAY_SAMPLE;
-#endif
-#define AUDIO_MAX_FREQ              48000
-#define AUDIO_MAX_SAMPLES           48
-
-
 
 /* Configuration 1 Descriptor */
 ROM BYTE configDescriptor1[] ={
@@ -227,7 +208,7 @@ ROM BYTE configDescriptor1[] ={
 
         /* Standard Video Control Interface Descriptor */
         0x09,                           /* Descriptor size */
-        0x04,        /* Interface Descriptor type */
+        0x04,                           /* Interface Descriptor type */
         0x00,                           /* Interface number */
         0x00,                           /* Alternate setting number */
         0x00,                           /* Number of end points */
@@ -277,7 +258,7 @@ ROM BYTE configDescriptor1[] ={
         // alternate setting 0 = Zero Bandwidth
         
         0x09,                           /* Descriptor size */
-        0x04,        /* Interface Descriptor type */
+        0x04,                           /* Interface Descriptor type */
         0x01,                           /* Interface number */
         0x00,                           /* Alternate setting number */
         0x00,                           /* Number of end points : Zero Bandwidth */
@@ -292,7 +273,7 @@ ROM BYTE configDescriptor1[] ={
         0x01,                           /* Descriptotor Subtype : Input Header */
         0x01,                           /* 1 format desciptor follows */
         0x4D,0x00,                      /* Total size of Class specific VS descr: 41 Bytes */
-        0x81,             /* EP address for BULK video data */
+        0x81,                           /* EP address for BULK video data */
         0x00,                           /* No dynamic format change supported */
         0x02,                           /* Output terminal ID : 4 */
         0x00,                           /* Still image capture method 1 supported */
@@ -327,27 +308,27 @@ ROM BYTE configDescriptor1[] ={
         0x05,                           /* Subtype: uncompressed frame I/F */
         0x01,                           /* Frame Descriptor Index */
         0x02,                           /* Still image capture method 1 supported, fixed frame rate */
-        WBVAL(WIDTH),                      /* Width in pixel: 160-QVGA */
-        WBVAL(HEIGHT),                      /* Height in pixel 120-QVGA */         
-         DBVAL(MIN_BIT_RATE),            /* Min bit rate bits/s. Not specified, taken from MJPEG */
+        WBVAL(WIDTH),                   /* Width in pixel: 160-QVGA */
+        WBVAL(HEIGHT),                  /* Height in pixel 120-QVGA */         
+         DBVAL(MIN_BIT_RATE),           /* Min bit rate bits/s. Not specified, taken from MJPEG */
         DBVAL(MAX_BIT_RATE),            /* Max bit rate bits/s. Not specified, taken from MJPEG */        
-        DBVAL(MAX_FRAME_SIZE),            /* Maximum video or still frame size in bytes(Deprecated) */        
-        DBVAL(INTERVAL),            /* Default Frame Interval */        
+        DBVAL(MAX_FRAME_SIZE),          /* Maximum video or still frame size in bytes(Deprecated) */        
+        DBVAL(INTERVAL),                /* Default Frame Interval */        
         0x01,                           /* Frame interval(Frame Rate) types: Only one frame interval supported */
-        DBVAL(INTERVAL),            /* Shortest Frame Interval */                
+        DBVAL(INTERVAL),                /* Shortest Frame Interval */                
        
           /* Color Matching Descriptor */
 
         0x06,          /* bLength */
-        0x24,                         /* bDescriptorType : CS_INTERFACE */
-        0x0D,                                 /* bDescriptorSubType : VS_COLORFORMAT */
-        0x01,                                 /* bColorPrimarie : 1: BT.709, sRGB (default) */
-        0x01,                                 /* bTransferCharacteristics : 1: BT.709 (default) */
-        0x04,                                 /* bMatrixCoefficients : 1: BT. 709. */
+        0x24,                           /* bDescriptorType : CS_INTERFACE */
+        0x0D,                           /* bDescriptorSubType : VS_COLORFORMAT */
+        0x01,                           /* bColorPrimarie : 1: BT.709, sRGB (default) */
+        0x01,                           /* bTransferCharacteristics : 1: BT.709 (default) */
+        0x04,                           /* bMatrixCoefficients : 1: BT. 709. */
               
        /* Standard Video Streaming Interface Descriptor (Alternate Setting 1) */
         0x09,                           /* Descriptor size */
-        0x04,        /* Interface Descriptor type */
+        0x04,                           /* Interface Descriptor type */
         0x01,                           /* Interface number */
         0x01,                           /* Alternate setting number */
         0x01,                           /* Number of end points : Zero Bandwidth */
@@ -358,10 +339,10 @@ ROM BYTE configDescriptor1[] ={
         
         /* Endpoint Descriptor for BULK Streaming Video Data */
         0x07,                           /* Descriptor size */
-        0x5,        /* Endpoint Descriptor Type */
-        0x81,             /* Endpoint address and description */
-        USB_TRANSFER_TYPE_ISOCHRONOUS ,                           /* BULK End point */
-        0xFF,0x03,         /*  max packet size */       
+        0x5,                            /* Endpoint Descriptor Type */
+        0x81,                           /* Endpoint address and description */
+        USB_TRANSFER_TYPE_ISOCHRONOUS , /* BULK End point */
+        0xFF,0x03,                      /*  max packet size */       
         0x01                            /* Servicing interval for data transfers */    
 };
 
