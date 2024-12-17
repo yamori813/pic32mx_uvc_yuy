@@ -310,7 +310,7 @@ ROM BYTE configDescriptor1[] ={
         0x02,                           /* Still image capture method 1 supported, fixed frame rate */
         WBVAL(WIDTH),                   /* Width in pixel: 160-QVGA */
         WBVAL(HEIGHT),                  /* Height in pixel 120-QVGA */         
-         DBVAL(MIN_BIT_RATE),           /* Min bit rate bits/s. Not specified, taken from MJPEG */
+        DBVAL(MIN_BIT_RATE),            /* Min bit rate bits/s. Not specified, taken from MJPEG */
         DBVAL(MAX_BIT_RATE),            /* Max bit rate bits/s. Not specified, taken from MJPEG */        
         DBVAL(MAX_FRAME_SIZE),          /* Maximum video or still frame size in bytes(Deprecated) */        
         DBVAL(INTERVAL),                /* Default Frame Interval */        
@@ -342,7 +342,7 @@ ROM BYTE configDescriptor1[] ={
         0x5,                            /* Endpoint Descriptor Type */
         0x81,                           /* Endpoint address and description */
         USB_TRANSFER_TYPE_ISOCHRONOUS , /* BULK End point */
-        0xFF,0x03,                      /*  max packet size */       
+        0xFF,0x03,                      /* max packet size */       
         0x01                            /* Servicing interval for data transfers */    
 };
 
