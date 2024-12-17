@@ -192,7 +192,7 @@ ROM BYTE configDescriptor1[] ={
         0xA7,0x00,                      /* Length of this descriptor and all sub descriptors */
         0x02,                           /* Number of interfaces */
         0x01,                           /* Configuration number */
-        0x00,                           /* COnfiguration string index */
+        0x00,                           /* Configuration string index */
         0x80,                           /* Config characteristics - Bus powered */
         0xFA,                           /* Max power consumption of device (in 2mA unit) : 500mA */
 
@@ -276,10 +276,10 @@ ROM BYTE configDescriptor1[] ={
         0x00,                           /* No dynamic format change supported */
         0x02,                           /* Output terminal ID : 4 */
         0x00,                           /* Still image capture method 1 supported */
-        0x01,                           /* Hardware trigger NOT supported */
+        0x00,                           /* Hardware trigger NOT supported */
         0x00,                           /* Hardware to initiate still image capture NOT supported */
         0x01,                           /* Size of controls field : 1 byte */
-        0x00,                           /* D2 : Compression quality supported */
+        0x00,                           /* bmaControls - No Controls supported */
    
         /* Class specific Uncompressed VS format descriptor */
         0x1B,                           /* Descriptor size */
