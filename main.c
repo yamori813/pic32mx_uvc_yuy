@@ -272,8 +272,8 @@ void EmulateCamera(void)
 
 			picture_index = 0;
 			frame_toggle ^= 1;
-		} else if (picture_index * (MAXPAYLOAD - 2) >= 160 * 2 * 120) {
-			tosend = 160 * 2 * 120 - (picture_index - 1) * (MAXPAYLOAD - 2);
+		} else if (picture_index * (MAXPAYLOAD - 2) >= MAX_FRAME_SIZE) {
+			tosend = MAX_FRAME_SIZE - (picture_index - 1) * (MAXPAYLOAD - 2);
 			eof = 1;
 		} else {
 			tosend = MAXPAYLOAD - 2;
